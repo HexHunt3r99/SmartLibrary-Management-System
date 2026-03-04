@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Reservations - SmartLibrary Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/reservations.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-book-open"></i>
+            </div>
+            <span class="logo-text">SmartLibrary</span>
+        </div>
+
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="dashboard.html" class="nav-link">
+                    <i class="fas fa-th-large"></i>
+                    Overview
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="users.html" class="nav-link">
+                    <i class="fas fa-users"></i>
+                    Users
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="books.html" class="nav-link">
+                    <i class="fas fa-book"></i>
+                    Books
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="borrows.html" class="nav-link">
+                    <i class="fas fa-handshake"></i>
+                    Borrows
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="reservations.html" class="nav-link active">
+                    <i class="fas fa-calendar-check"></i>
+                    Reservations
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="fines.html" class="nav-link">
+                    <i class="fas fa-wallet"></i>
+                    Fines
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="reports.html" class="nav-link">
+                    <i class="fas fa-chart-bar"></i>
+                    Reports
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <a href="../login.html" class="nav-link">
+                <i class="fas fa-sign-out-alt"></i>
+                Logout
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <h1 class="header-title">Manage Reservations</h1>
+
+            <div class="header-right">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search reservations...">
+                </div>
+
+                <button class="btn-add">
+                    <i class="fas fa-plus"></i> New Reservation
+                </button>
+
+            </div>
+        </header>
+
+        <div class="dashboard">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon blue">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                    </div>
+                    <div class="stat-value">89</div>
+                    <div class="stat-label">Active Reservations</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon green">
+                            <i class="fas fa-check"></i>
+                        </div>
+                    </div>
+                    <div class="stat-value">45</div>
+                    <div class="stat-label">Ready for Pickup</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon orange">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                    </div>
+                    <div class="stat-value">32</div>
+                    <div class="stat-label">Pending Approval</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon purple">
+                            <i class="fas fa-check-double"></i>
+                        </div>
+                    </div>
+                    <div class="stat-value">156</div>
+                    <div class="stat-label">Completed This Month</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">All Reservations</h2>
+                    <div class="filter-bar">
+                        <div class="filter-group">
+                            <span class="filter-label">Status:</span>
+                            <select class="filter-select">
+                                <option>All Status</option>
+                                <option>Pending</option>
+                                <option>Ready</option>
+                                <option>Completed</option>
+                                <option>Cancelled</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <span class="filter-label">Time:</span>
+                            <select class="filter-select">
+                                <option>All Time</option>
+                                <option>Today</option>
+                                <option>This Week</option>
+                                <option>This Month</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Book</th>
+                                <th>Reserved Date</th>
+                                <th>Pickup Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="user-cell-img">JD</div>
+                                        <div class="user-cell-info">
+                                            <h4>John Doe</h4>
+                                            <p>STU-2024-00142</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="book-cell">
+                                        <div class="book-cover"
+                                            style="background: linear-gradient(135deg, #667eea, #764ba2)">
+                                            <i class="fas fa-book"></i>
+                                        </div>
+                                        <div class="book-info">
+                                            <h4>Clean Code</h4>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Feb 15, 2026</td>
+                                <td>Feb 18, 2026</td>
+                                <td><span class="status-badge status-ready">Ready</span></td>
+                                <td>
+                                    <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn approve"><i class="fas fa-check"></i></button>
+                                    <button class="action-btn cancel"><i class="fas fa-times"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="user-cell-img">SJ</div>
+                                        <div class="user-cell-info">
+                                            <h4>Sarah Johnson</h4>
+                                            <p>STU-2024-00143</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="book-cell">
+                                        <div class="book-cover"
+                                            style="background: linear-gradient(135deg, #4facfe, #00f2fe)">
+                                            <i class="fas fa-book"></i>
+                                        </div>
+                                        <div class="book-info">
+                                            <h4>The Pragmatic Programmer</h4>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Feb 16, 2026</td>
+                                <td>Feb 19, 2026</td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td>
+                                    <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn approve"><i class="fas fa-check"></i></button>
+                                    <button class="action-btn cancel"><i class="fas fa-times"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="user-cell-img">MC</div>
+                                        <div class="user-cell-info">
+                                            <h4>Michael Chen</h4>
+                                            <p>FAC-2023-0089</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="book-cell">
+                                        <div class="book-cover"
+                                            style="background: linear-gradient(135deg, #fa709a, #fee140)">
+                                            <i class="fas fa-book"></i>
+                                        </div>
+                                        <div class="book-info">
+                                            <h4>Design Patterns</h4>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Feb 10, 2026</td>
+                                <td>Feb 13, 2026</td>
+                                <td><span class="status-badge status-completed">Completed</span></td>
+                                <td>
+                                    <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="user-cell-img">EW</div>
+                                        <div class="user-cell-info">
+                                            <h4>Emily Williams</h4>
+                                            <p>LIB-2022-0023</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="book-cell">
+                                        <div class="book-cover"
+                                            style="background: linear-gradient(135deg, #a8edea, #fed6e3)">
+                                            <i class="fas fa-book"></i>
+                                        </div>
+                                        <div class="book-info">
+                                            <h4>Introduction to Algorithms</h4>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Feb 17, 2026</td>
+                                <td>Feb 20, 2026</td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td>
+                                    <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn approve"><i class="fas fa-check"></i></button>
+                                    <button class="action-btn cancel"><i class="fas fa-times"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="user-cell-img">RJ</div>
+                                        <div class="user-cell-info">
+                                            <h4>Robert James</h4>
+                                            <p>STU-2024-00144</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="book-cell">
+                                        <div class="book-cover"
+                                            style="background: linear-gradient(135deg, #ff9a9e, #fecfef)">
+                                            <i class="fas fa-book"></i>
+                                        </div>
+                                        <div class="book-info">
+                                            <h4>Sapiens</h4>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Feb 12, 2026</td>
+                                <td>Feb 15, 2026</td>
+                                <td><span class="status-badge status-cancelled">Cancelled</span></td>
+                                <td>
+                                    <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

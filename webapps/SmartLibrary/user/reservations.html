@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations - SmartLibrary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/reservations.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-book-open"></i>
+            </div>
+            <span class="logo-text">SmartLibrary</span>
+        </div>
+
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="dashboard.html" class="nav-link">
+                    <i class="fas fa-th-large"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="books.html" class="nav-link">
+                    <i class="fas fa-search"></i>
+                    <span>Browse Library</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="borrows.html" class="nav-link">
+                    <i class="fas fa-book"></i>
+                    <span>My Books</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="reservations.html" class="nav-link active">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Reservations</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="fines.html" class="nav-link">
+                    <i class="fas fa-wallet"></i>
+                    <span>My Fines</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="profile.html" class="nav-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Profile Settings</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="reports.html" class="nav-link">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>My Reports</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="help.html" class="nav-link">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Help</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <a href="login.html" class="nav-link">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <h1 class="header-title">Your Active Reservations</h1>
+        </header>
+
+        <div class="dashboard">
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon blue">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                    </div>
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">Active Reservations</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon green">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                    <div class="stat-value">1</div>
+                    <div class="stat-label">Ready for Pickup</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon orange">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                    </div>
+                    <div class="stat-value">2</div>
+                    <div class="stat-label">In Queue</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">All Reservations</h2>
+                    <a href="#" class="card-link">View History</a>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Book</th>
+                                <th>Author</th>
+                                <th>Queue Position</th>
+                                <th>Reserved Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="book-info">
+                                        <div class="book-thumb"
+                                            style="background: linear-gradient(135deg, #667eea, #764ba2);"></div>
+                                        <div class="book-details">
+                                            <h4>The Great Gatsby</h4>
+                                            <span>ISBN: 978-0743273565</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>F. Scott Fitzgerald</td>
+                                <td><strong>#1</strong></td>
+                                <td>Feb 15, 2026</td>
+                                <td><span class="status-badge status-available">Available for Pickup</span></td>
+                                <td>
+                                    <button class="btn-action btn-primary">Borrow Now</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="book-info">
+                                        <div class="book-thumb"
+                                            style="background: linear-gradient(135deg, #f093fb, #f5576c);"></div>
+                                        <div class="book-details">
+                                            <h4>To Kill a Mockingbird</h4>
+                                            <span>ISBN: 978-0061120084</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Harper Lee</td>
+                                <td><strong>#3</strong></td>
+                                <td>Feb 10, 2026</td>
+                                <td><span class="status-badge status-queue">In Queue</span></td>
+                                <td>
+                                    <button class="btn-action btn-danger">Cancel</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="book-info">
+                                        <div class="book-thumb"
+                                            style="background: linear-gradient(135deg, #4facfe, #00f2fe);"></div>
+                                        <div class="book-details">
+                                            <h4>1984</h4>
+                                            <span>ISBN: 978-0451524935</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>George Orwell</td>
+                                <td><strong>#2</strong></td>
+                                <td>Feb 12, 2026</td>
+                                <td><span class="status-badge status-queue">In Queue</span></td>
+                                <td>
+                                    <button class="btn-action btn-danger">Cancel</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="book-info">
+                                        <div class="book-thumb"
+                                            style="background: linear-gradient(135deg, #fa709a, #fee140);"></div>
+                                        <div class="book-details">
+                                            <h4>Pride and Prejudice</h4>
+                                            <span>ISBN: 978-0141439518</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Jane Austen</td>
+                                <td><strong>#1</strong></td>
+                                <td>Feb 18, 2026</td>
+                                <td><span class="status-badge status-available">Available for Pickup</span></td>
+                                <td>
+                                    <button class="btn-action btn-primary">Borrow Now</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

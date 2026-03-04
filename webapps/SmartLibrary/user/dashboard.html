@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartLibrary - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-book-open"></i>
+            </div>
+            <span class="logo-text">SmartLibrary</span>
+        </div>
+
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="dashboard.html" class="nav-link active">
+                    <i class="fas fa-th-large"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="books.html" class="nav-link">
+                    <i class="fas fa-search"></i>
+                    Browse Library
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="borrows.html" class="nav-link">
+                    <i class="fas fa-book"></i>
+                    My Books
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="reservations.html" class="nav-link">
+                    <i class="fas fa-calendar-check"></i>
+                    Reservations
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="fines.html" class="nav-link">
+                    <i class="fas fa-wallet"></i>
+                    My Fines
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="profile.html" class="nav-link">
+                    <i class="fas fa-user"></i>
+                    Profile Settings
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="reports.html" class="nav-link">
+                    <i class="fas fa-chart-bar"></i>
+                    My Reports
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="help.html" class="nav-link">
+                    <i class="fas fa-question-circle"></i>
+                    Help
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <a href="login.html" class="nav-link">
+                <i class="fas fa-sign-out-alt"></i>
+                Logout
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <h1 class="header-title">Welcome back, John!</h1>
+        </header>
+
+        <div class="dashboard">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon blue">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <span class="stat-trend up">+1 this week</span>
+                    </div>
+                    <div class="stat-value">2 Books</div>
+                    <div class="stat-label">Currently Borrowed</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon green">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                    </div>
+                    <div class="stat-value">1 Book</div>
+                    <div class="stat-label">Reservations</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon orange">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                    </div>
+                    <div class="stat-value">₹ 0.00</div>
+                    <div class="stat-label">Unpaid Fines</div>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Recently Borrowed</h2>
+                        <a href="#" class="card-link">View All</a>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Book</th>
+                                    <th>Borrowed Date</th>
+                                    <th>Due Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="book-info">
+                                            <div class="book-thumb"
+                                                style="background: linear-gradient(135deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-size: 20px;">
+                                                <i class="fas fa-book"></i>
+                                            </div>
+                                            <div class="book-details">
+                                                <h4>Introduction to Algorithms</h4>
+                                                <span>Thomas H. Cormen</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Feb 10, 2026</td>
+                                    <td>
+                                        <div class="due-date warning">
+                                            <i class="fas fa-clock"></i>
+                                            Feb 24, 2026
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="status-badge active">Active</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="book-info">
+                                            <div class="book-thumb"
+                                                style="background: linear-gradient(135deg, #f093fb, #f5576c); display: flex; align-items: center; justify-content: center; color: white; font-size: 20px;">
+                                                <i class="fas fa-book"></i>
+                                            </div>
+                                            <div class="book-details">
+                                                <h4>Clean Code</h4>
+                                                <span>Robert C. Martin</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Feb 05, 2026</td>
+                                    <td>
+                                        <div class="due-date normal">
+                                            <i class="fas fa-clock"></i>
+                                            Feb 19, 2026
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="status-badge active">Active</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="book-info">
+                                            <div class="book-thumb"
+                                                style="background: linear-gradient(135deg, #4facfe, #00f2fe); display: flex; align-items: center; justify-content: center; color: white; font-size: 20px;">
+                                                <i class="fas fa-book"></i>
+                                            </div>
+                                            <div class="book-details">
+                                                <h4>The Pragmatic Programmer</h4>
+                                                <span>David Thomas</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Jan 20, 2026</td>
+                                    <td>
+                                        <div class="due-date normal">
+                                            <i class="fas fa-check-circle"></i>
+                                            Returned
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="status-badge returned">Returned</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Recommended For You</h2>
+                        <a href="#" class="card-link">Browse More</a>
+                    </div>
+                    <div class="recommended-section">
+                        <div class="books-grid">
+                            <div class="book-card">
+                                <div class="book-cover" style="background: linear-gradient(135deg, #11998e, #38ef7d);">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="book-info">
+                                    <h4>Design Patterns</h4>
+                                    <span class="author">Gang of Four</span>
+                                    <div class="book-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>4.8</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="book-card">
+                                <div class="book-cover" style="background: linear-gradient(135deg, #ee0979, #ff6a00);">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="book-info">
+                                    <h4>JavaScript: The Good Parts</h4>
+                                    <span class="author">Douglas Crockford</span>
+                                    <div class="book-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>4.9</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="book-card">
+                                <div class="book-cover"
+                                    style="background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="book-info">
+                                    <h4>Database System Concepts</h4>
+                                    <span class="author">Abraham Silberschatz</span>
+                                    <div class="book-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <span>4.2</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="book-card">
+                                <div class="book-cover" style="background: linear-gradient(135deg, #00c6ff, #0072ff);">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="book-info">
+                                    <h4>Computer Networks</h4>
+                                    <span class="author">Andrew Tanenbaum</span>
+                                    <div class="book-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>4.6</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

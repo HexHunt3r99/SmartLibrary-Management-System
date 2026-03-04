@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Reports - SmartLibrary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/reports.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-book-open"></i>
+            </div>
+            <span class="logo-text">SmartLibrary</span>
+        </div>
+
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="dashboard.html" class="nav-link">
+                    <i class="fas fa-th-large"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="books.html" class="nav-link">
+                    <i class="fas fa-search"></i>
+                    Browse Library
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="borrows.html" class="nav-link">
+                    <i class="fas fa-book"></i>
+                    My Books
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="reservations.html" class="nav-link">
+                    <i class="fas fa-calendar-check"></i>
+                    Reservations
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="fines.html" class="nav-link">
+                    <i class="fas fa-wallet"></i>
+                    My Fines
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="profile.html" class="nav-link">
+                    <i class="fas fa-user"></i>
+                    Profile Settings
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="reports.html" class="nav-link active">
+                    <i class="fas fa-chart-bar"></i>
+                    My Reports
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="help.html" class="nav-link">
+                    <i class="fas fa-question-circle"></i>
+                    Help
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <a href="login.html" class="nav-link">
+                <i class="fas fa-sign-out-alt"></i>
+                Logout
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <h1 class="header-title">My Reports</h1>
+        </header>
+
+        <div class="dashboard">
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon blue">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="stat-value">12</div>
+                    <div class="stat-label">Total Books Borrowed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-value">8</div>
+                    <div class="stat-label">Returned on Time</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-value">4</div>
+                    <div class="stat-label">Late Returns</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon red">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="stat-value">₹150</div>
+                    <div class="stat-label">Total Fines Paid</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Borrowing History</h2>
+                    <button class="btn-export">
+                        <i class="fas fa-download"></i> Export
+                    </button>
+                </div>
+                <div class="filter-bar" style="padding: 16px 24px 0;">
+                    <div class="filter-group">
+                        <span class="filter-label">From:</span>
+                        <input type="date" class="filter-select" value="2025-01-01">
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label">To:</span>
+                        <input type="date" class="filter-select" value="2026-02-18">
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label">Status:</span>
+                        <select class="filter-select">
+                            <option>All</option>
+                            <option>Returned</option>
+                            <option>Active</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Book Title</th>
+                                <th>Borrowed Date</th>
+                                <th>Returned Date</th>
+                                <th>Status</th>
+                                <th>Fine</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Introduction to Algorithms</td>
+                                <td>Jan 15, 2026</td>
+                                <td>Jan 29, 2026</td>
+                                <td><span class="status-badge status-completed">Returned</span></td>
+                                <td><span class="amount">₹0</span></td>
+                            </tr>
+                            <tr>
+                                <td>Clean Code</td>
+                                <td>Jan 20, 2026</td>
+                                <td>Feb 03, 2026</td>
+                                <td><span class="status-badge status-completed">Returned</span></td>
+                                <td><span class="amount negative">₹30</span></td>
+                            </tr>
+                            <tr>
+                                <td>The Pragmatic Programmer</td>
+                                <td>Feb 01, 2026</td>
+                                <td>Feb 10, 2026</td>
+                                <td><span class="status-badge status-completed">Returned</span></td>
+                                <td><span class="amount negative">₹20</span></td>
+                            </tr>
+                            <tr>
+                                <td>Design Patterns</td>
+                                <td>Feb 05, 2026</td>
+                                <td>Feb 18, 2026</td>
+                                <td><span class="status-badge status-completed">Returned</span></td>
+                                <td><span class="amount positive">₹0</span></td>
+                            </tr>
+                            <tr>
+                                <td>Computer Networks</td>
+                                <td>Feb 10, 2026</td>
+                                <td>-</td>
+                                <td><span class="status-badge status-pending">Active</span></td>
+                                <td><span class="amount">-</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Fine Summary</h2>
+                    <button class="btn-export">
+                        <i class="fas fa-download"></i> Export
+                    </button>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Book</th>
+                                <th>Reason</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Jan 29, 2026</td>
+                                <td>Introduction to Algorithms</td>
+                                <td>Late return (2 days)</td>
+                                <td><span class="amount negative">₹20</span></td>
+                                <td><span class="status-badge status-completed">Paid</span></td>
+                            </tr>
+                            <tr>
+                                <td>Feb 03, 2026</td>
+                                <td>Clean Code</td>
+                                <td>Late return (3 days)</td>
+                                <td><span class="amount negative">₹30</span></td>
+                                <td><span class="status-badge status-completed">Paid</span></td>
+                            </tr>
+                            <tr>
+                                <td>Feb 10, 2026</td>
+                                <td>The Pragmatic Programmer</td>
+                                <td>Late return (2 days)</td>
+                                <td><span class="amount negative">₹20</span></td>
+                                <td><span class="status-badge status-completed">Paid</span></td>
+                            </tr>
+                            <tr>
+                                <td>Feb 15, 2026</td>
+                                <td>Data Structures</td>
+                                <td>Late return (1 day)</td>
+                                <td><span class="amount negative">₹10</span></td>
+                                <td><span class="status-badge status-completed">Paid</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

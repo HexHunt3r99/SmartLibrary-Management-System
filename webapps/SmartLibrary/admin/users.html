@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Users - SmartLibrary Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/users.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-book-open"></i>
+            </div>
+            <span class="logo-text">SmartLibrary</span>
+        </div>
+
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="dashboard.html" class="nav-link">
+                    <i class="fas fa-th-large"></i>
+                    Overview
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="users.html" class="nav-link active">
+                    <i class="fas fa-users"></i>
+                    Users
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="books.html" class="nav-link">
+                    <i class="fas fa-book"></i>
+                    Books
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="borrows.html" class="nav-link">
+                    <i class="fas fa-handshake"></i>
+                    Borrows
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="reservations.html" class="nav-link">
+                    <i class="fas fa-calendar-check"></i>
+                    Reservations
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="fines.html" class="nav-link">
+                    <i class="fas fa-wallet"></i>
+                    Fines
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="reports.html" class="nav-link">
+                    <i class="fas fa-chart-bar"></i>
+                    Reports
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <a href="../login.html" class="nav-link">
+                <i class="fas fa-sign-out-alt"></i>
+                Logout
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <h1 class="header-title">Manage Users</h1>
+
+            <div class="header-right">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search users...">
+                </div>
+
+                <button class="btn-add">
+                    <i class="fas fa-plus"></i> Add User
+                </button>
+
+            </div>
+        </header>
+
+        <div class="dashboard">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon blue">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                    <div class="stat-value">2,847</div>
+                    <div class="stat-label">Total Users</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon green">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                    </div>
+                    <div class="stat-value">2,156</div>
+                    <div class="stat-label">Students</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon purple">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                    </div>
+                    <div class="stat-value">156</div>
+                    <div class="stat-label">Faculty Members</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon orange">
+                            <i class="fas fa-user-clock"></i>
+                        </div>
+                    </div>
+                    <div class="stat-value">89</div>
+                    <div class="stat-label">New This Month</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">All Users</h2>
+                    <div class="filter-bar">
+                        <div class="filter-group">
+                            <span class="filter-label">Role:</span>
+                            <select class="filter-select">
+                                <option>All Roles</option>
+                                <option>Student</option>
+                                <option>Faculty</option>
+                                <option>Librarian</option>
+                                <option>Admin</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <span class="filter-label">Status:</span>
+                            <select class="filter-select">
+                                <option>All Status</option>
+                                <option>Active</option>
+                                <option>Inactive</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Joined Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="user-cell-img">JD</div>
+                                        <div class="user-cell-info">
+                                            <h4>John Doe</h4>
+                                            <p>STU-2024-00142</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>john.doe@university.edu</td>
+                                <td><span class="role-badge role-student">Student</span></td>
+                                <td>Jan 15, 2024</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="user-cell-img">SJ</div>
+                                        <div class="user-cell-info">
+                                            <h4>Sarah Johnson</h4>
+                                            <p>STU-2024-00143</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>sarah.j@university.edu</td>
+                                <td><span class="role-badge role-student">Student</span></td>
+                                <td>Feb 20, 2024</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="user-cell-img">MC</div>
+                                        <div class="user-cell-info">
+                                            <h4>Michael Chen</h4>
+                                            <p>FAC-2023-0089</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>m.chen@university.edu</td>
+                                <td><span class="role-badge role-faculty">Faculty</span></td>
+                                <td>Aug 10, 2023</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="user-cell-img">EW</div>
+                                        <div class="user-cell-info">
+                                            <h4>Emily Williams</h4>
+                                            <p>LIB-2022-0023</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>e.williams@university.edu</td>
+                                <td><span class="role-badge role-librarian">Librarian</span></td>
+                                <td>Mar 05, 2022</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="user-cell-img">RJ</div>
+                                        <div class="user-cell-info">
+                                            <h4>Robert James</h4>
+                                            <p>STU-2024-00144</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>r.james@university.edu</td>
+                                <td><span class="role-badge role-student">Student</span></td>
+                                <td>Sep 12, 2024</td>
+                                <td><span class="status-badge status-inactive">Inactive</span></td>
+                                <td>
+                                    <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="user-cell-img">AM</div>
+                                        <div class="user-cell-info">
+                                            <h4>Admin Manager</h4>
+                                            <p>ADM-2021-0001</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>admin@smartlibrary.edu</td>
+                                <td><span class="role-badge role-admin">Admin</span></td>
+                                <td>Jan 01, 2021</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

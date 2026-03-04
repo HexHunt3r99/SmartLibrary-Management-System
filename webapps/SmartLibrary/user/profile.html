@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - SmartLibrary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-book-open"></i>
+            </div>
+            <span class="logo-text">SmartLibrary</span>
+        </div>
+
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="dashboard.html" class="nav-link">
+                    <i class="fas fa-th-large"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="books.html" class="nav-link">
+                    <i class="fas fa-search"></i>
+                    Browse Library
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="borrows.html" class="nav-link">
+                    <i class="fas fa-book"></i>
+                    My Books
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="reservations.html" class="nav-link">
+                    <i class="fas fa-calendar-check"></i>
+                    Reservations
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="fines.html" class="nav-link">
+                    <i class="fas fa-wallet"></i>
+                    My Fines
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="profile.html" class="nav-link active">
+                    <i class="fas fa-user"></i>
+                    Profile Settings
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="reports.html" class="nav-link">
+                    <i class="fas fa-chart-bar"></i>
+                    My Reports
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="help.html" class="nav-link">
+                    <i class="fas fa-question-circle"></i>
+                    Help
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <a href="login.html" class="nav-link">
+                <i class="fas fa-sign-out-alt"></i>
+                Logout
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <h1 class="header-title">My Profile</h1>
+        </header>
+
+        <div class="dashboard">
+
+            <div class="profile-grid">
+                <div class="profile-content">
+                    <div class="settings-section">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">Personal Information</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">Full Name</label>
+                                        <input type="text" class="form-input" value="John Doe">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Email Address</label>
+                                        <input type="email" class="form-input" value="john.doe@university.edu">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">Membership ID</label>
+                                        <input type="text" class="form-input" value="STU-2024-00142" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-input" value="+1 234 567 8900"
+                                            placeholder="Enter phone number">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Address</label>
+                                    <input type="text" class="form-input"
+                                        value="123 University Road, College Town, CT 06511" placeholder="Enter address">
+                                </div>
+                                <div class="form-actions">
+                                    <button class="btn-save-changes">Save Changes</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">Account Security</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="security-item">
+                                    <div class="security-info">
+                                        <div class="security-icon">
+                                            <i class="fas fa-lock"></i>
+                                        </div>
+                                        <div>
+                                            <h4>Password</h4>
+                                            <p>Last changed 30 days ago</p>
+                                        </div>
+                                    </div>
+                                    <button class="btn-change-password">
+                                        <i class="fas fa-key"></i> Change Password
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+    </main>
+
+</body>
+
+</html>
