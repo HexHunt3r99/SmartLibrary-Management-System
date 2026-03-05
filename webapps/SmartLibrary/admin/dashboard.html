@@ -7,8 +7,205 @@
     <title>Admin Overview & Analytics - SmartLibrary</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/dashboard.js"></script>
-    </body>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-book-open"></i>
+            </div>
+            <span class="logo-text">SmartLibrary</span>
+        </div>
+
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="dashboard.html" class="nav-link active">
+                    <i class="fas fa-th-large"></i>
+                    Overview
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="users.html" class="nav-link">
+                    <i class="fas fa-users"></i>
+                    Users
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="books.html" class="nav-link">
+                    <i class="fas fa-book"></i>
+                    Books
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="borrows.html" class="nav-link">
+                    <i class="fas fa-handshake"></i>
+                    Borrows
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="reservations.html" class="nav-link">
+                    <i class="fas fa-calendar-check"></i>
+                    Reservations
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="fines.html" class="nav-link">
+                    <i class="fas fa-wallet"></i>
+                    Fines
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="reports.html" class="nav-link">
+                    <i class="fas fa-chart-bar"></i>
+                    Reports
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <a href="../login.html" class="nav-link">
+                <i class="fas fa-sign-out-alt"></i>
+                Logout
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <h1 class="header-title">Dashboard Overview</h1>
+            <div class="header-right">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="user-profile">
+                    <div class="user-info">
+                        <span class="user-name">Admin</span>
+                        <span class="user-role">Administrator</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon blue">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <span class="stat-trend up">+12%</span>
+                    </div>
+                    <div class="stat-value">2,847</div>
+                    <div class="stat-label">Total Users</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon green">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <span class="stat-trend up">+5%</span>
+                    </div>
+                    <div class="stat-value">4,256</div>
+                    <div class="stat-label">Total Books</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon orange">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                    </div>
+                    <div class="stat-value">892</div>
+                    <div class="stat-label">Active Borrows</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon purple">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                    </div>
+                    <div class="stat-value">₹12,450</div>
+                    <div class="stat-label">Total Fines Collected</div>
+                </div>
+            </div>
+
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h2 class="chart-title">Borrowing Trends</h2>
+                        <select class="chart-select">
+                            <option>This Month</option>
+                            <option>Last Month</option>
+                            <option>Last 3 Months</option>
+                        </select>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="borrowChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h2 class="chart-title">Category Distribution</h2>
+                    </div>
+                    <div class="chart-container-sm">
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-activity">
+                <div class="chart-header">
+                    <h2 class="chart-title">Recent Activity</h2>
+                </div>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon green">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="activity-details">
+                            <h4>New User Registered</h4>
+                            <p>John Doe has registered as a new student</p>
+                        </div>
+                        <span class="activity-time">2 mins ago</span>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon blue">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="activity-details">
+                            <h4>Book Borrowed</h4>
+                            <p>"Clean Code" was borrowed by Sarah Johnson</p>
+                        </div>
+                        <span class="activity-time">15 mins ago</span>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon orange">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <div class="activity-details">
+                            <h4>Overdue Notice</h4>
+                            <p>5 books are overdue and need attention</p>
+                        </div>
+                        <span class="activity-time">1 hour ago</span>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon green">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="activity-details">
+                            <h4>Reservation Completed</h4>
+                            <p>"Introduction to Algorithms" returned and reserved</p>
+                        </div>
+                        <span class="activity-time">2 hours ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
 
 </html>

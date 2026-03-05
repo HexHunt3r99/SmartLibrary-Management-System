@@ -151,8 +151,9 @@ body::before {
 
 .help-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 32px;
 }
 
 .help-card {
@@ -160,14 +161,19 @@ body::before {
     border-radius: 16px;
     box-shadow: var(--shadow);
     padding: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.help-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
 }
 
 .help-icon {
     width: 48px;
     height: 48px;
     border-radius: 12px;
-    background: var(--light-blue);
-    color: var(--primary-blue);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -175,48 +181,184 @@ body::before {
     margin-bottom: 16px;
 }
 
-.help-title {
+.help-icon.blue {
+    background: var(--light-blue);
+    color: var(--primary-blue);
+}
+
+.help-icon.green {
+    background: #D1FAE5;
+    color: var(--success);
+}
+
+.help-icon.orange {
+    background: #FEF3C7;
+    color: var(--warning);
+}
+
+.help-icon.purple {
+    background: #EDE9FE;
+    color: #7C3AED;
+}
+
+.help-icon.red {
+    background: #FEE2E2;
+    color: var(--danger);
+}
+
+.help-icon.teal {
+    background: #CCFBF1;
+    color: #0D9488;
+}
+
+.help-card h3 {
     font-size: 16px;
     font-weight: 600;
     color: var(--text-dark);
     margin-bottom: 8px;
 }
 
-.help-text {
+.help-card p {
+    font-size: 14px;
+    color: var(--text-gray);
+    line-height: 1.5;
+}
+
+.faq-section {
+    margin-bottom: 32px;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq-item {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.faq-question:hover {
+    background: var(--soft-blue);
+}
+
+.faq-question h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.faq-question i {
+    font-size: 14px;
+    color: var(--text-gray);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+}
+
+.faq-answer p {
+    padding: 0 24px 20px;
     font-size: 14px;
     color: var(--text-gray);
     line-height: 1.6;
 }
 
-.contact-card {
-    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
-    border-radius: 16px;
-    padding: 32px;
-    color: var(--white);
-    grid-column: span 2;
+.contact-section {
+    margin-bottom: 32px;
 }
 
-.contact-title {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-
-.contact-text {
+.contact-section > p {
     font-size: 14px;
-    opacity: 0.9;
-    margin-bottom: 16px;
+    color: var(--text-gray);
+    margin-bottom: 20px;
 }
 
-.contact-btn {
-    padding: 12px 24px;
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.contact-item {
     background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.contact-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.contact-icon.blue {
+    background: var(--light-blue);
     color: var(--primary-blue);
-    border: none;
-    border-radius: 8px;
+}
+
+.contact-icon.green {
+    background: #D1FAE5;
+    color: var(--success);
+}
+
+.contact-icon.orange {
+    background: #FEF3C7;
+    color: var(--warning);
+}
+
+.contact-item h4 {
     font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+}
+
+.contact-item p {
+    font-size: 13px;
+    color: var(--text-gray);
 }
 
 @media (max-width: 768px) {
@@ -228,7 +370,7 @@ body::before {
         grid-template-columns: 1fr;
     }
 
-    .contact-card {
-        grid-column: span 1;
+    .contact-grid {
+        grid-template-columns: 1fr;
     }
 }
