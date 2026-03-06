@@ -37,7 +37,6 @@ SmartLibrary/
 │   ├── borrows.html
 │   ├── reservations.html
 │   ├── fines.html
-│   ├── reports.html
 │   ├── css/            # Admin CSS files
 │   └── js/             # Admin JS files
 ├── WEB-INF/

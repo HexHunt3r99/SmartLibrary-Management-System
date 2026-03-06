@@ -13,13 +13,14 @@ The Admin Module provides librarians and administrators with comprehensive tools
 | borrows.html | Manage all borrowings |
 | reservations.html | Manage reservations |
 | fines.html | Manage fines |
-| reports.html | View reports and analytics |
 
 ## Features
 
 ### Dashboard
 - Library statistics overview
 - Total books, users, active borrows
+- Borrowing Trends chart
+- Category Distribution chart
 - Recent activities
 - Quick action buttons
 
@@ -54,13 +55,6 @@ The Admin Module provides librarians and administrators with comprehensive tools
 - Payment tracking
 - Generate fine reports
 
-### Reports
-- Borrowing statistics
-- Popular books
-- User activity
-- Fine summaries
-- Export to CSV/PDF
-
 ## Design
 - Professional admin interface
 - Data tables with sorting/filtering
@@ -76,11 +70,9 @@ Inline styles have been extracted to external CSS files:
 - `css/borrows.css`
 - `css/reservations.css`
 - `css/fines.css`
-- `css/reports.css`
 
 Inline JavaScript has been extracted to external JS files:
 - `js/dashboard.js`
-- `js/reports.js`
 
 ## Usage
 Access through the admin sidebar. Use the dashboard for quick overview and navigation to specific management sections.
