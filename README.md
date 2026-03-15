@@ -29,95 +29,66 @@ A comprehensive web-based library management system built with Java Servlet/JSP,
 - **Frontend**: HTML, CSS, JavaScript
 - **Server**: Apache Tomcat
 
-## Database Schema
+## Database Setup
 
-The system uses the following main tables:
-- `users` - User accounts (admin and regular users)
-- `books` - Book inventory
-- `borrows` - Borrow records
-- `reservations` - Book reservations
-- `fines` - Fine records
-- `categories` - Book categories
-- `stats` - System statistics
-
-## Installation
-
-### Prerequisites
-- Java Development Kit (JDK) 8 or higher
-- Apache Tomcat 9+
-- PostgreSQL 13+
-
-### Database Setup
-
-1. Create a PostgreSQL database named `smartlibrary`
-2. Run the schema SQL file located at:
-   ```
-   webapps/SmartLibrary/database/schema.sql
-   ```
-3. Configure database connection in:
-   ```
-   webapps/SmartLibrary/WEB-INF/classes/db.properties
-   ```
-
-### Deployment
-
-1. Build the project or use the pre-built WAR file
-2. Deploy to Apache Tomcat webapps directory
-3. Start Tomcat server
-4. Access the application at `http://localhost:8080/SmartLibrary/`
+1. Create database named `demoo` in PostgreSQL
+2. Configure DBConnection.java with your credentials:
+   - URL: `jdbc:postgresql://localhost:5432/demoo`
+   - Username: `postgres`
+   - Password: `admin`
+3. Run schema from `webapps/SmartLibrary/database/schema.sql`
 
 ## Default Credentials
 
 - **Admin**: `admin` / `admin123`
-- **Librarian**: Create through admin panel
+- Run `AdminCreator.java` to create admin account
 
 ## Project Structure
 
 ```
 SmartLibrary-Management-System/
-├── src/main/java/com/smartlibrary/     # Java source files
-│   ├── Login.java
-│   ├── Register.java
-│   ├── Dashboard.java
-│   ├── Book.java
-│   ├── User.java
-│   ├── Member.java
-│   ├── Librarian.java
-│   ├── AddBook.java
-│   ├── RemoveBook.java
-│   ├── SearchBook.java
-│   ├── BorrowBook.java
-│   ├── ReturnBook.java
-│   └── BorrowRecord.java
-├── webapps/SmartLibrary/               # Web application
-│   ├── admin/                          # Admin pages
-│   ├── user/                           # User pages
-│   ├── database/                       # SQL scripts
-│   ├── WEB-INF/                        # Configuration
-│   └── css/, js/                       # Static resources
-└── conf/                               # Tomcat configuration
+├── src/main/java/com/smartlibrary/
+│   ├── controller/          # Servlet controllers
+│   │   ├── LoginServlet.java
+│   │   ├── RegisterServlet.java
+│   │   └── BookServlet.java
+│   ├── model/              # Data models
+│   │   ├── Book.java
+│   │   ├── User.java
+│   │   └── BorrowRecord.java
+│   └── util/               # Utility classes
+│       ├── DBConnection.java
+│       └── AdminCreator.java
+├── webapps/SmartLibrary/   # Web application
+│   ├── admin/              # Admin pages
+│   ├── user/               # User pages
+│   ├── js/                 # JavaScript files
+│   ├── css/                # Stylesheets
+│   └── WEB-INF/            # Configuration
+│       ├── web.xml
+│       └── classes/
+└── lib/                    # Libraries
 ```
 
-## Configuration
+## Compile & Run
 
-### Database Configuration
+```bash
+# Compile servlets
+javac -cp "lib/servlet-api.jar;lib/postgresql-jdbc.jar" -d webapps/SmartLibrary/WEB-INF/classes src/main/java/com/smartlibrary/util/DBConnection.java src/main/java/com/smartlibrary/controller/*.java
 
-Edit `webapps/SmartLibrary/WEB-INF/classes/db.properties`:
-```properties
-db.url=jdbc:postgresql://localhost:5432/smartlibrary
-db.username=postgres
-db.password=yourpassword
+# Run AdminCreator to create admin
+javac -cp "lib/postgresql-jdbc.jar;src/main/java" src/main/java/com/smartlibrary/util/AdminCreator.java
+java -cp "lib/postgresql-jdbc.jar;src/main/java" com.smartlibrary.util.AdminCreator
+
+# Test DB Connection
+java -cp "lib/postgresql-jdbc.jar;src/main/java" com.smartlibrary.util.DBConnection
 ```
 
-### Tomcat Configuration
+## Access Application
 
-Edit `conf/server.xml` to modify port settings (default: 8080).
-
-## Usage
-
-1. **Login**: Access the login page and enter credentials
-2. **Admin**: Manage books, users, and view reports
-3. **Users**: Search books, borrow/return, manage reservations
+```
+http://localhost:8080/SmartLibrary/
+```
 
 ## License
 
