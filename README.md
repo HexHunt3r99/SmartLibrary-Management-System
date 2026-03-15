@@ -1,79 +1,124 @@
-## Welcome to Apache Tomcat!
+# Smart Library Management System
 
-### What Is It?
+A comprehensive web-based library management system built with Java Servlet/JSP, PostgreSQL, and HTML/CSS/JavaScript.
 
-The Apache Tomcat® software is an open source implementation of the Jakarta
-Servlet, Jakarta Pages, Jakarta Expression Language and Jakarta WebSocket
-technologies. The Jakarta Servlet, Jakarta Server Pages, Jakarta Expression Language and
-Jakarta WebSocket specifications are developed as part of the
-[Jakarta EE Platform](https://jakarta.ee/specifications/).
+## Features
 
-The Apache Tomcat software is developed in an open and participatory
-environment and released under the
-[Apache License version 2](https://www.apache.org/licenses/). The Apache Tomcat
-project is intended to be a collaboration of the best-of-breed developers from
-around the world. We invite you to participate in this open development
-project. To learn more about getting involved,
-[click here](https://tomcat.apache.org/getinvolved.html) or keep reading.
+### Admin Features
+- Dashboard with statistics overview
+- Book management (add, edit, delete, search)
+- User management
+- Borrow records management
+- Reservation management
+- Fine management
+- Reports generation
 
-Apache Tomcat software powers numerous large-scale, mission-critical web
-applications across a diverse range of industries and organizations. Some of
-these users and their stories are listed on the
-[PoweredBy wiki page](https://cwiki.apache.org/confluence/display/TOMCAT/PoweredBy).
+### User Features
+- User dashboard
+- Book search and browsing
+- Borrow books
+- Return books
+- Make reservations
+- View fine history
+- Profile management
 
-Apache Tomcat, Tomcat, Apache, the Apache feather, and the Apache Tomcat
-project logo are trademarks of the Apache Software Foundation.
+## Technology Stack
 
-### Get It
+- **Backend**: Java Servlet/JSP
+- **Database**: PostgreSQL
+- **Frontend**: HTML, CSS, JavaScript
+- **Server**: Apache Tomcat
 
-For every major Tomcat version there is one download page containing
-links to the latest binary and source code downloads, but also
-links for browsing the download directories and archives:
-- [Tomcat 11](https://tomcat.apache.org/download-11.cgi)
-- [Tomcat 10](https://tomcat.apache.org/download-10.cgi)
-- [Tomcat 9](https://tomcat.apache.org/download-90.cgi)
+## Database Schema
 
-To facilitate choosing the right major Tomcat version one, we have provided a
-[version overview page](https://tomcat.apache.org/whichversion.html).
+The system uses the following main tables:
+- `users` - User accounts (admin and regular users)
+- `books` - Book inventory
+- `borrows` - Borrow records
+- `reservations` - Book reservations
+- `fines` - Fine records
+- `categories` - Book categories
+- `stats` - System statistics
 
-### Documentation
+## Installation
 
-The documentation available as of the date of this release is
-included in the docs webapp which ships with tomcat. You can access that webapp
-by starting tomcat and visiting <http://localhost:8080/docs/> in your browser.
-The most up-to-date documentation for each version can be found at:
-- [Tomcat 11](https://tomcat.apache.org/tomcat-11.0-doc/)
-- [Tomcat 10](https://tomcat.apache.org/tomcat-10.1-doc/)
-- [Tomcat 9](https://tomcat.apache.org/tomcat-9.0-doc/)
+### Prerequisites
+- Java Development Kit (JDK) 8 or higher
+- Apache Tomcat 9+
+- PostgreSQL 13+
 
-### Installation
+### Database Setup
 
-Please see [RUNNING.txt](RUNNING.txt) for more info.
+1. Create a PostgreSQL database named `smartlibrary`
+2. Run the schema SQL file located at:
+   ```
+   webapps/SmartLibrary/database/schema.sql
+   ```
+3. Configure database connection in:
+   ```
+   webapps/SmartLibrary/WEB-INF/classes/db.properties
+   ```
 
-### Licensing
+### Deployment
 
-Please see [LICENSE](LICENSE) for more info.
+1. Build the project or use the pre-built WAR file
+2. Deploy to Apache Tomcat webapps directory
+3. Start Tomcat server
+4. Access the application at `http://localhost:8080/SmartLibrary/`
 
-### Support and Mailing List Information
+## Default Credentials
 
-* Free community support is available through the
-[tomcat-users](https://tomcat.apache.org/lists.html#tomcat-users) email list and
-a dedicated [IRC channel](https://tomcat.apache.org/irc.html) (#tomcat on
-Freenode).
+- **Admin**: `admin` / `admin123`
+- **Librarian**: Create through admin panel
 
-* If you want freely available support for running Apache Tomcat, please see the
-resources page [here](https://tomcat.apache.org/findhelp.html).
+## Project Structure
 
-* If you want to be informed about new code releases, bug fixes,
-security fixes, general news and information about Apache Tomcat, please
-subscribe to the
-[tomcat-announce](https://tomcat.apache.org/lists.html#tomcat-announce) email
-list.
+```
+SmartLibrary-Management-System/
+├── src/main/java/com/smartlibrary/     # Java source files
+│   ├── Login.java
+│   ├── Register.java
+│   ├── Dashboard.java
+│   ├── Book.java
+│   ├── User.java
+│   ├── Member.java
+│   ├── Librarian.java
+│   ├── AddBook.java
+│   ├── RemoveBook.java
+│   ├── SearchBook.java
+│   ├── BorrowBook.java
+│   ├── ReturnBook.java
+│   └── BorrowRecord.java
+├── webapps/SmartLibrary/               # Web application
+│   ├── admin/                          # Admin pages
+│   ├── user/                           # User pages
+│   ├── database/                       # SQL scripts
+│   ├── WEB-INF/                        # Configuration
+│   └── css/, js/                       # Static resources
+└── conf/                               # Tomcat configuration
+```
 
-* If you have a concrete bug report for Apache Tomcat, please see the
-instructions for reporting a bug
-[here](https://tomcat.apache.org/bugreport.html).
+## Configuration
 
-### Contributing
+### Database Configuration
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for more info.
+Edit `webapps/SmartLibrary/WEB-INF/classes/db.properties`:
+```properties
+db.url=jdbc:postgresql://localhost:5432/smartlibrary
+db.username=postgres
+db.password=yourpassword
+```
+
+### Tomcat Configuration
+
+Edit `conf/server.xml` to modify port settings (default: 8080).
+
+## Usage
+
+1. **Login**: Access the login page and enter credentials
+2. **Admin**: Manage books, users, and view reports
+3. **Users**: Search books, borrow/return, manage reservations
+
+## License
+
+This project is for educational purposes.
