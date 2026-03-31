@@ -1,0 +1,4 @@
+javac -cp "lib/*;webapps/SmartLibrary/WEB-INF/lib/*" -d webapps/SmartLibrary/WEB-INF/classes src/main/java/com/smartlibrary/**/*.java
+java -cp "lib/*;webapps/SmartLibrary/WEB-INF/classes;webapps/SmartLibrary/WEB-INF/lib/*" org.apache.catalina.startup.Main
+
+javac -cp "lib/*;webapps/SmartLibrary/WEB-INF/lib/*" -d webapps/SmartLibrary/WEB-INF/classes src\main\java\com\smartlibrary\controller\AddBook.java
